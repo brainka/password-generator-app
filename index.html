@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="icon" href="/assets/images/favicon-32x32.png" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Password Generator</h1>
+		<main>
+			<div class="password-generator-container">
+				<div class="password-wrapper">
+					<div class="password placeholder">P4$5W0rD!</div>
+					<!-- <input type="text" disabled placeholder="P4$5W0rD!"> -->
+					<div class="clipboard">
+						<span class="hidden">COPIED</span>
+						<img
+							class="clipboard-icon"
+							src="/assets/images/icon-copy.svg"
+							alt="Copy to clipboard icon"
+						/>
+					</div>
+				</div>
+				<div class="password-options-wrapper">
+					<div class="password-options">
+						<div class="slider-container">
+							<div class="slider-heading">
+								<div class="heading">Character Length</div>
+								<div class="length">0</div>
+							</div>
+							<input
+								type="range"
+								min="1"
+								max="10"
+								value="0"
+								class="slider"
+								id="my-range"
+							/>
+						</div>
+						<ul>
+							<li>
+								<span
+									role="checkbox"
+									aria-checked="false"
+									tabindex="0"
+									aria-labelledby="uppercase"
+								>
+									<img
+										src="/assets/images/icon-check.svg"
+										alt=""
+										class="hidden"
+									/>
+								</span>
+								<label for="uppercase">Include Uppercase Letters</label>
+							</li>
+							<li>
+								<span
+									role="checkbox"
+									aria-checked="false"
+									tabindex="0"
+									aria-labelledby="lowercase"
+								>
+									<img
+										src="/assets/images/icon-check.svg"
+										alt=""
+										class="hidden"
+									/>
+								</span>
+								<label for="lowercase">Include Lowercase Letters</label>
+							</li>
+							<li>
+								<span
+									role="checkbox"
+									aria-checked="false"
+									tabindex="0"
+									aria-labelledby="numbers"
+								>
+									<img
+										src="/assets/images/icon-check.svg"
+										alt=""
+										class="hidden"
+									/>
+								</span>
+								<label for="numbers">Include Numbers</label>
+							</li>
+							<li>
+								<span
+									role="checkbox"
+									aria-checked="false"
+									tabindex="0"
+									aria-labelledby="symbols"
+								>
+									<img
+										src="/assets/images/icon-check.svg"
+										alt=""
+										class="hidden"
+									/>
+								</span>
+								<label for="symbols">Include Symbols</label>
+							</li>
+						</ul>
+					</div>
+					<div class="password-strength-indicator-container">
+						<div class="password-strength">STRENGTH</div>
+						<div class="password-indicator">
+							<h2>MEDIUM</h2>
+						</div>
+					</div>
+					<div class="button-container">
+						<button class="generate-button">GENERATE</button>
+						<img
+							src="/assets/images/icon-arrow-right.svg"
+							alt="Right arrow icon"
+						/>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	<script src="/main.js"></script>
+</html>
