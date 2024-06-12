@@ -172,17 +172,26 @@ h2 {
 	padding: var(--19px) var(--32px);
 }
 
-.password {
+input[class='password'] {
 	font-size: var(--heading-large-fs);
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: var(--main-almost-white);
 }
 
-.password.placeholder {
+input[class='password']::placeholder {
 	color: var(--main-gray);
 }
 
 .clipboard-icon {
 	align-self: center;
 	cursor: pointer;
+	color: var(--main-neon-green);
+}
+
+.clipboard-icon:hover {
+	color: var(--main-almost-white);
 }
 
 .slider-heading {
@@ -213,7 +222,7 @@ input[type='range'] {
 	outline: none;
 	border-radius: 0px;
 	width: 100%;
-	height: var(--8px);
+	height: 8px;
 	background: var(--main-very-dark-grey);
 }
 
@@ -223,6 +232,7 @@ input[type='range']::-webkit-slider-thumb {
 	background: var(--main-almost-white);
 	width: var(--28px);
 	height: var(--28px);
+	border: none;
 	border-radius: 50%;
 }
 
@@ -273,7 +283,6 @@ li span {
 .button-container {
 	display: flex;
 	justify-content: center;
-	align-items: ce;
 	background-color: var(--main-neon-green);
 	padding: var(--21px) 0;
 	gap: var(--24px);
@@ -283,13 +292,29 @@ li span {
 
 button[class='generate-button'] {
 	border: none;
-	background-color: var(--main-neon-green);
+	background-color: transparent;
 	padding: 0;
 	font-size: var(--body-fs);
+	cursor: pointer;
 }
 
-.button-container img {
+.button-container:hover {
+	outline: 2px solid var(--main-neon-green);
+	background-color: var(--main-dark-grey);
+	color: var(--main-neon-green);
+}
+
+.button-container:hover .generate-button {
+	color: inherit;
+}
+
+.button-container svg {
 	align-self: center;
+	color: var(--main-dark-grey);
+}
+
+.button-container:hover svg {
+	color: currentColor;
 }
 
 .hidden {
@@ -305,4 +330,21 @@ button[class='generate-button'] {
 .clipboard span {
 	align-self: center;
 	color: var(--main-neon-green);
+}
+
+.password-indicator {
+	display: flex;
+	gap: 15.5px;
+}
+
+.strength-progress-bar-container {
+	display: flex;
+	gap: var(--8px);
+}
+
+.strength-progress-bar {
+	width: 10px;
+	height: 28px;
+	border: 2px solid var(--main-almost-white);
+	align-self: center;
 }
