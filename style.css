@@ -307,6 +307,7 @@ button[class='generate-button'] {
 	padding: 0;
 	font-size: var(--body-fs);
 	cursor: pointer;
+	color: var(--main-dark-grey);
 }
 
 .button-container:hover {
