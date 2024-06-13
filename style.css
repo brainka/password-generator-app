@@ -6,7 +6,7 @@
 	--main-neon-green: hsl(127, 100%, 82%);
 	--main-red: hsl(0, 91%, 63%);
 	--main-orange: hsl(13, 95%, 66%);
-	--main-yellow: hsl(42, 15%, 11%);
+	--main-yellow: hsl(42, 91%, 69%);
 
 	--heading-large-fs: 32px;
 	--heading-medium-fs: 24px;
@@ -132,6 +132,11 @@ li {
 	list-style: none;
 }
 
+li label {
+	/* font-size: clamp(var(--16px), 0.9565rem + 0.2174vi, var(--18px)); */
+	font-size: 18px;
+}
+
 li span[class='checked'] {
 	display: flex;
 	padding: var(--5px) var(--3px) var(--3px) var(--4px);
@@ -141,11 +146,12 @@ li span[class='checked'] {
 
 h1 {
 	color: var(--main-gray);
-	font-size: var(--heading-medium-fs);
+	font-size: clamp(var(--16px), 0.8261rem + 0.8696vi, var(--24px));
 }
 
 h2 {
 	color: var(--main-almost-white);
+	font-size: clamp(var(--18px), 0.9946rem + 0.6522vi, var(--24px));
 }
 
 .password-generator-container {
@@ -173,14 +179,18 @@ h2 {
 }
 
 input[class='password'] {
-	font-size: var(--heading-large-fs);
+	/* font-size: var(--heading-large-fs); */
+	font-size: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
 	background-color: transparent;
 	border: none;
 	outline: none;
 	color: var(--main-almost-white);
+	width: 100%;
 }
 
 input[class='password']::placeholder {
+	font-size: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
+
 	color: var(--main-gray);
 }
 
@@ -278,6 +288,7 @@ li span {
 .password-strength {
 	align-self: center;
 	color: var(--main-gray);
+	font-size: clamp(var(--16px), 0.9565rem + 0.2174vi, var(--18px));
 }
 
 .button-container {
@@ -347,4 +358,81 @@ button[class='generate-button'] {
 	height: 28px;
 	border: 2px solid var(--main-almost-white);
 	align-self: center;
+}
+
+.too-weak {
+	border: none;
+	background-color: var(--main-red);
+}
+
+.weak {
+	border: none;
+	background-color: var(--main-orange);
+}
+
+.medium {
+	border: none;
+	background-color: var(--main-yellow);
+}
+
+.strong {
+	border: none;
+	background-color: var(--main-neon-green);
+}
+
+@media screen and (max-width: 26.5625em) {
+	body {
+		padding: 0 16px;
+		gap: 16px;
+	}
+
+	.password-options-wrapper {
+		padding: 16px;
+	}
+
+	li label {
+		font-size: 16px;
+	}
+
+	#generate-button {
+		font-size: 16px;
+	}
+
+	.button-container {
+		padding: 18px 0;
+	}
+
+	.password-generator-container {
+		gap: var(--16px);
+	}
+
+	.password-options-wrapper {
+		gap: unset;
+	}
+
+	.password-strength-indicator-container {
+		margin-block-start: 32px;
+		margin-block-end: 16px;
+		padding: 14px 16px;
+	}
+
+	.password-wrapper {
+		padding-block-start: 17px;
+		padding-block-end: 15px;
+		padding-inline-start: 16px;
+		padding-inline-end: 16px;
+	}
+
+	ul {
+		gap: 16px;
+	}
+
+	.password-strength-indicator-container,
+	.button-container {
+		height: 56px;
+	}
+
+	.slider-container {
+		gap: unset;
+	}
 }
