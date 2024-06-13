@@ -386,6 +386,7 @@ button[class='generate-button'] {
 	body {
 		padding: 0 16px;
 		gap: 16px;
+		height: 100dvh;
 	}
 
 	.password-options-wrapper {
@@ -410,6 +411,10 @@ button[class='generate-button'] {
 
 	.password-options-wrapper {
 		gap: unset;
+	}
+
+	.password-options {
+		gap: 32px;
 	}
 
 	.password-strength-indicator-container {
