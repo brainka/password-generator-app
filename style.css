@@ -308,6 +308,7 @@ button[class='generate-button'] {
 	font-size: var(--body-fs);
 	cursor: pointer;
 	color: var(--main-dark-grey);
+	font-weight: 700;
 }
 
 .button-container:hover {
