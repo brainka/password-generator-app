@@ -99,6 +99,8 @@ const arrays = {
 };
 
 function handleCheckboxClick(e) {
+	copiedToClipboard.classList.add('hidden');
+
 	combinedCharacterArrays = [];
 	e.currentTarget.querySelector('img').classList.toggle('hidden');
 	e.currentTarget.classList.toggle('checked');
@@ -154,6 +156,9 @@ function handleCopyClipboard() {
 	copyText.select();
 	copyText.setSelectionRange(0, 9999);
 	navigator.clipboard.writeText(copyText.value);
+
+	window.getSelection().removeAllRanges();
+	document.activeElement.blur();
 }
 
 function passwordStrengthIndicator() {
