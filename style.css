@@ -194,6 +194,9 @@ h2 {
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
+	padding: 0;
+	margin: -1px;
+	clip-path: inset(50%);
 }
 
 .clipboard-icon {
