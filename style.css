@@ -178,21 +178,25 @@ h2 {
 	padding: var(--19px) var(--32px);
 }
 
-input[class='password'] {
+.password {
 	/* font-size: var(--heading-large-fs); */
 	font-size: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
 	background-color: transparent;
-	border: none;
-	outline: none;
-	color: var(--main-almost-white);
+	/* border: none;
+	outline: none; */
+	color: var(--main-gray);
 	width: 100%;
 }
 
-input[class='password']::placeholder {
+.generated {
+	color: var(--main-almost-white);
+}
+
+/* input[class='password']::placeholder {
 	font-size: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
 
 	color: var(--main-gray);
-}
+} */
 
 .clipboard-icon {
 	align-self: center;

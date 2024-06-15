@@ -7,6 +7,7 @@ const copiedToClipboard = document.querySelector('span.hidden');
 const strengthProgressBar = document.querySelectorAll('.strength-progress-bar');
 const strengthIndicatorHeading = document.querySelector('.password-indicator');
 const h2 = document.createElement('h2');
+const generatedPasswordElement = document.querySelector('.password');
 
 const uppercaseArray = [
 	'A',
@@ -138,6 +139,7 @@ function arrayShuffle() {
 }
 
 function handleGeneratePasswordButton(e) {
+	generatedPasswordElement.classList.add('generated');
 	generatedPassword = '';
 	arrayShuffle();
 
@@ -145,18 +147,16 @@ function handleGeneratePasswordButton(e) {
 		generatedPassword = generatedPassword + combinedCharacterArrays[i];
 	}
 
-	document.querySelector('input.password').value = generatedPassword;
+	generatedPasswordElement.textContent = generatedPassword;
 
 	passwordStrengthIndicator();
 }
 
 function handleCopyClipboard() {
-	let copyText = document.querySelector('input.password');
+	let copyText = document.querySelector('.password');
+	let textToCopy = copyText.textContent;
 	copiedToClipboard.classList.remove('hidden');
-
-	copyText.select();
-	copyText.setSelectionRange(0, 9999);
-	navigator.clipboard.writeText(copyText.value);
+	navigator.clipboard.writeText(textToCopy);
 
 	window.getSelection().removeAllRanges();
 	document.activeElement.blur();
