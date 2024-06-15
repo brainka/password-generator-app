@@ -5,14 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="/style.css" />
 		<link rel="icon" href="/assets/images/favicon-32x32.png" />
-		<title>Document</title>
+		<title>Password Generator</title>
 	</head>
 	<body>
-		<h1>Password Generator</h1>
+	
+			<h1>Password Generator</h1>
+	
 		<main>
 			<div class="password-generator-container">
 				<div class="password-wrapper">
-					<input class="password" placeholder="P4$5W0rD!" readonly></input>
+					<input type="text" class="password" placeholder="P4$5W0rD!" readonly aria-labelledby="Password generated"></input>
 					<!-- <input type="text" disabled placeholder="P4$5W0rD!"> -->
 					<div class="clipboard">
 						<span class="hidden">COPIED</span>
@@ -43,7 +45,7 @@
 									role="checkbox"
 									aria-checked="false"
 									tabindex="0"
-									aria-labelledby="uppercase"
+									aria-labelledby="uppercase-letters"
 									data-value="uppercase"
 								>
 									<img
@@ -52,7 +54,7 @@
 										class="hidden"
 									/>
 								</span>
-								<label for="uppercase">Include Uppercase Letters</label>
+								<p id="uppercase-letters">Include Uppercase Letters</p>
 							</li>
 							<li>
 								<span
@@ -68,7 +70,7 @@
 										class="hidden"
 									/>
 								</span>
-								<label for="lowercase">Include Lowercase Letters</label>
+								<p id="lowercase">Include Lowercase Letters</p>
 							</li>
 							<li>
 								<span
@@ -84,7 +86,7 @@
 										class="hidden"
 									/>
 								</span>
-								<label for="numbers">Include Numbers</label>
+								<p id="numbers">Include Numbers</p>
 							</li>
 							<li>
 								<span
@@ -100,14 +102,13 @@
 										class="hidden"
 									/>
 								</span>
-								<label for="symbols">Include Symbols</label>
+								<p id="symbols">Include Symbols</p>
 							</li>
 						</ul>
 					</div>
 					<div class="password-strength-indicator-container">
 						<div class="password-strength">STRENGTH</div>
 						<div class="password-indicator">
-							<h2></h2>
 							<div class="strength-progress-bar-container">
 								<div class="strength-progress-bar"></div>
 								<div class="strength-progress-bar"></div>

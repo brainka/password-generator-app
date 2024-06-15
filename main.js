@@ -5,9 +5,8 @@ const generateButtonElement = document.querySelector('.button-container');
 const clipboardIconElement = document.querySelector('.clipboard-icon');
 const copiedToClipboard = document.querySelector('span.hidden');
 const strengthProgressBar = document.querySelectorAll('.strength-progress-bar');
-const strengthIndicatorHeading = document.querySelector(
-	'.password-indicator h2'
-);
+const strengthIndicatorHeading = document.querySelector('.password-indicator');
+const h2 = document.createElement('h2');
 
 const uppercaseArray = [
 	'A',
@@ -109,8 +108,10 @@ function handleCheckboxClick(e) {
 		passwordSelections = passwordSelections.filter(
 			(selection) => selection !== e.currentTarget.dataset.value
 		);
+		e.currentTarget.setAttribute('aria-checked', 'false');
 	} else {
 		passwordSelections = [...passwordSelections, e.currentTarget.dataset.value];
+		e.currentTarget.setAttribute('aria-checked', 'true');
 	}
 
 	passwordSelections.forEach((item) => {
@@ -189,6 +190,8 @@ function passwordStrengthIndicator() {
 }
 
 function handlePasswordStrengthColor(passwordStrength) {
+	h2.textContent = '';
+
 	strengthProgressBar.forEach((element) => {
 		if (element.classList.contains(currentStrengthIndicator)) {
 			element.classList.remove(currentStrengthIndicator);
@@ -205,7 +208,8 @@ function handlePasswordStrengthColor(passwordStrength) {
 
 	currentStrengthIndicator = passwordStrength.replace('-', ' ');
 
-	strengthIndicatorHeading.textContent = currentStrengthIndicator.toUpperCase();
+	h2.textContent = currentStrengthIndicator.toUpperCase();
+	strengthIndicatorHeading.prepend(h2);
 }
 
 checkboxElements.forEach((item) =>
